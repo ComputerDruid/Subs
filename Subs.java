@@ -49,9 +49,6 @@ public class Subs extends JPanel {
 	ArrayList<Integer> mtnsizes = new ArrayList<Integer>();
 	ArrayList<Integer> mtnnums = new ArrayList<Integer>();
 	public int difficulty = 0;
-//       ArrayList<Integer> icexs = new ArrayList<Integer>();
-//       ArrayList<Integer> icesizes = new ArrayList<Integer>();
-//       ArrayList<Integer> icenums = new ArrayList<Integer>();
 	public Subs() {
 		initMusic();
 		myImage = new BufferedImage(screenwidth, screenheight, BufferedImage.TYPE_INT_RGB);
@@ -69,15 +66,6 @@ public class Subs extends JPanel {
 		mtnnums.add((int)(Math.random()*3) + 1);
 		difficulty = 0;
 		gamestate=MENU;
-//          icexs.add(100);
-//          icexs.add(550);
-//          icexs.add(950);
-//          icesizes.add(150);
-//          icesizes.add(300);
-//          icesizes.add(200);
-//          icenums.add((int)(Math.random()*2)+1);
-//          icenums.add((int)(Math.random()*2)+1);
-//          icenums.add((int)(Math.random()*2)+1);
 		t.start();
 		time.start();
 	}
@@ -201,7 +189,6 @@ public class Subs extends JPanel {
 		}
 	}
 	public void drawBG() {
-		//          buffer.drawImage(bgair,0,0-screenystart,1280,700,null);
 		buffer.drawImage(bgwater, 0, 0, 1280, 800, null);
 		for (int counter = 0; counter < mtnxs.size(); counter++) {
 			int nextx = mtnxs.get(counter);
@@ -211,30 +198,6 @@ public class Subs extends JPanel {
 			ImageIcon mtn = new ImageIcon("Images/Mountain-" + nextnum + ".png");
 			buffer.drawImage(mtn.getImage(), nextx, 800 - nextsize, nextsize, nextsize, null);
 		}
-//          for(int counter = 0; counter < icexs.size(); counter++)
-//          {
-//             int nextx = icexs.get(counter);
-//             int nextsize = icesizes.get(counter);
-//             int nextnum = icenums.get(counter);
-//             icexs.set(counter,nextx-1);
-//             ImageIcon ice = new ImageIcon("Images/Iceberg-" + nextnum + ".png");
-//             buffer.drawImage(ice.getImage(),nextx,0,nextsize,nextsize,null);
-//          }
-//          if(Math.random() > .99)
-//          {
-//             int lastice = 0;
-//             int lastsize = 0;
-//             if(icexs.size() > 0) lastice = icexs.get(icexs.size()-1);
-//             if(icesizes.size() > 0) lastsize = icesizes.get(icesizes.size()-1);
-//             if(lastice+lastsize < screenwidth)
-//             {
-//                int newice = screenwidth-1;
-//                int newsize = (int)((Math.random()*200)+100);
-//                icexs.add(newice);
-//                icesizes.add(newsize);
-//                icenums.add((int)((Math.random()*3)+1));
-//             }
-//          }
 		if (Math.random() > .9) {
 			int lastmtn = 0;
 			int lastsize = 0;
@@ -413,57 +376,7 @@ public class Subs extends JPanel {
 							it.remove();
 						}
 					}
-					//                   ListIterator mit = e.getMissiles().listIterator();
-					//                   while(mit.hasNext())
-					//                   {
-					//                      missile m = (missile)mit.next();
-					//                      if(ex.inRadius(m.getX(),m.getY()))
-					//                      {
-					//                         explosionstoadd.add(new explosion(m.getX(),m.getY(),10));
-					//                         mit.remove();
-					//                      }
-					//                      else if(ex.inRadius(m.getX()+m.getWidth(),m.getY()))
-					//                      {
-					//                         explosionstoadd.add(new explosion(m.getX(),m.getY(),10));
-					//                         mit.remove();
-					//                      }
-					//                      else if(ex.inRadius(m.getX(),m.getY()+m.getHeight()))
-					//                      {
-					//                         explosionstoadd.add(new explosion(m.getX(),m.getY(),10));
-					//                         mit.remove();
-					//                      }
-					//                      else if(ex.inRadius(m.getX()+m.getWidth(),m.getY()+m.getHeight()))
-					//                      {
-					//                         explosionstoadd.add(new explosion(m.getX(),m.getY(),10));
-					//                         mit.remove();
-					//                      }
-					//                   }
 				}
-				//                ListIterator i = currentmissiles.listIterator();
-				//                while(i.hasNext())
-				//                {
-				//                   missile m = (missile)i.next();
-				//                   if(ex.inRadius(m.getX(),m.getY()))
-				//                   {
-				//                      explosionstoadd.add(new explosion(m.getX(),m.getY(),10));
-				//                      i.remove();
-				//                   }
-				//                   else if(ex.inRadius(m.getX()+m.getWidth(),m.getY()))
-				//                   {
-				//                      explosionstoadd.add(new explosion(m.getX(),m.getY(),10));
-				//                      i.remove();
-				//                   }
-				//                   else if(ex.inRadius(m.getX(),m.getY()+m.getHeight()))
-				//                   {
-				//                      explosionstoadd.add(new explosion(m.getX(),m.getY(),10));
-				//                      i.remove();
-				//                   }
-				//                   else if(ex.inRadius(m.getX()+m.getWidth(),m.getY()+m.getHeight()))
-				//                   {
-				//                      explosionstoadd.add(new explosion(m.getX(),m.getY(),10));
-				//                      i.remove();
-				//                   }
-				//                }
 			}
 		}
 		currentexplosions.addAll(explosionstoadd);
@@ -636,19 +549,6 @@ for (enemy e : currentenemies) {
 	}
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("Submarine game!");
-		//          GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-		//
-		//          if(gd.isFullScreenSupported()) {
-		//             gd.setFullScreenWindow(frame);
-		//          }
-		//          else {
-		//             frame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
-		//          }
-		//          frame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
-		//          frame.setPreferredSize(Toolkit.getDefaultToolkit().getScreenSize());
-		//          frame.setMinimumSize(Toolkit.getDefaultToolkit().getScreenSize());
-		//          frame.setMaximumSize(Toolkit.getDefaultToolkit().getScreenSize());
-		// 			frame.pack();
 		frame.setSize(screenwidth, screenheight);
 		frame.setLocationRelativeTo(null);
 		frame.setUndecorated(true);
@@ -662,12 +562,3 @@ for (enemy e : currentenemies) {
 		catch (Exception e) {}
 	}
 }
-// work on level design
-// level class with enemies, release time, etc
-// high score saving
-// text file
-// plane enemies
-// destroyer type enemies (ships on surface)
-// giant underwater bombs with chains
-// marine life (bonus??? negative???)
-// powerups???
